@@ -1,0 +1,72 @@
+
+<html>
+<head>
+	<title>Form Example</title>
+	<style>
+        label {
+	display: block;
+	margin-top: 10px;
+}
+
+input[type="text"],
+input[type="email"],
+textarea {
+	width: 100%;
+	padding: 10px;
+	border: 1px solid #ccc;
+	border-radius: 5px;
+	box-sizing: border-box;
+	margin-bottom: 20px;
+}
+
+button[type="submit"] {
+	background-color: #4CAF50;
+	color: white;
+	padding: 12px 20px;
+	border: none;
+	border-radius: 5px;
+	cursor: pointer;
+}
+
+button[type="submit"]:hover {
+	background-color: #45a049;
+}
+.one
+{
+    background-image: url("nice.jpg");
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+}
+    </style>
+</head>
+<body class="one">
+	<form id="myForm" action="" method="POST">
+		<label for="name">Name:</label>
+		<input type="text" id="name" name="name" required>
+
+		<label for="email">Email:</label>
+		<input type="email" id="email" name="email" required>
+
+		<label for="message">Message:</label>
+		<textarea id="message" name="message" required></textarea>
+
+		<button type="submit" id="submitBtn">Submit</button>
+	</form>
+
+	<script src="script.js">
+        const form = document.getElementById('myForm');
+
+form.addEventListener('submit', (e) => {
+	e.preventDefault();
+	const name = document.getElementById('name').value;
+	const email = document.getElementById('email').value;
+	const message = document.getElementById('message').value;
+
+	// Here you can add code to validate the inputs and handle form submission
+	console.log(`Name: ${name}, Email: ${email}, Message: ${message}`);
+	form.reset();
+});
+
+    </script>
+</body>
+</html>
